@@ -401,7 +401,7 @@ app.use('/api/your-resource', yourRoutes);
 ---
 
 ## Author
+Razija Merdanić
+Student project – NTIP (Napredne tehnike internet programiranja).
 
-Student project – NTIP (Napredne tehnike izrade programske potpore / Advanced Software Engineering Techniques).
 
-Suitable for university coursework and GitHub portfolio.
