@@ -1,0 +1,29 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply bg-dusty-50 text-dusty-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2.5 rounded-btn font-medium text-white bg-dusty-500 hover:bg-dusty-600 
+           transition-colors shadow-sm hover:shadow;
+  }
+  .btn-secondary {
+    @apply px-4 py-2.5 rounded-btn font-medium text-dusty-700 bg-dusty-200 hover:bg-dusty-300 
+           transition-colors border border-dusty-300;
+  }
+  .card {
+    @apply bg-white rounded-soft border border-dusty-200 p-4 shadow-sm;
+  }
+  .link {
+    @apply text-dusty-600 hover:text-dusty-800 hover:underline transition-colors;
+  }
+  input, select, textarea {
+    @apply rounded-btn border-dusty-200 focus:border-dusty-500 focus:ring-1 focus:ring-dusty-300;
+  }
+}
