@@ -4,7 +4,7 @@
 
 **Smart Wardrobe** is a full-stack web application that helps users manage their wardrobe, create outfit combinations, and plan packing for trips based on weather forecasts. It provides a digital closet experience with features like categorizing clothing items, building outfits from existing pieces, and receiving packing recommendations based on destination weather data.
 
-The application serves both guests (landing page) and authenticated users who can access the full functionality. Admin users have additional capabilities to manage news content.
+The application serves both guests (landing page) and authenticated users who can access the full functionality. 
 
 ---
 
@@ -12,7 +12,6 @@ The application serves both guests (landing page) and authenticated users who ca
 
 ### Guest Features
 - **Landing Page** – Modern SaaS-style hero with background image, glassmorphism cards, and call-to-action buttons
-- **News** – Browse published news articles (public access)
 - **Authentication** – Register and login with username/password
 
 ### Authenticated User Features
@@ -25,8 +24,6 @@ The application serves both guests (landing page) and authenticated users who ca
 - **Weather Check** – Query current weather and forecasts for any destination before or during trip planning
 - **Statistics** – Charts for clothes by category, most worn items, color distribution, and seasonal usage (Recharts)
 
-### Admin Features
-- **News Management** – CRUD operations for news articles (create, edit, delete, publish/unpublish)
 
 ---
 
@@ -221,7 +218,7 @@ SQLite3 (file: `server/wardrobe.db`)
 | POST | `/login` | No | Login, returns JWT |
 | POST | `/verify-token` | Yes | Verify JWT, return user info |
 
-### News (`/api/news`) – Public
+### Home (`/api/news`) – Public
 | Method | Route | Auth | Description |
 |--------|-------|------|-------------|
 | GET | `/` | No | Get published news |
@@ -266,20 +263,6 @@ SQLite3 (file: `server/wardrobe.db`)
 | GET | `/color-distribution` | Color distribution |
 | GET | `/seasonal-usage` | Seasonal usage |
 
-### Admin News (`/api/admin/news`) – Admin only
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/` | All news (incl. unpublished) |
-| GET | `/:id` | Get news |
-| POST | `/` | Create news |
-| PUT | `/:id` | Update news |
-| DELETE | `/:id` | Delete news |
-
-### Users (`/api/users`) – Admin only
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET | `/` | List all users |
-
 ---
 
 ## Authentication
@@ -293,11 +276,9 @@ SQLite3 (file: `server/wardrobe.db`)
 
 ### Middleware
 - **authenticateToken**: Verifies JWT from `Authorization` header; 401/403 on failure.
-- **requireAdmin**: Ensures `req.user.role === 'ADMIN'`; used for admin news and users.
 
 ### Protected Routes
 - Clothes, Outfits, Trips, Stats require a valid JWT.
-- Admin News and Users require JWT + ADMIN role.
 
 ---
 
@@ -391,7 +372,7 @@ app.use('/api/your-resource', yourRoutes);
 
 - Password reset / email verification
 - Social login (Google, Facebook)
-- Outfit suggestions based on occasion/weather
+- Outfit suggestions based on occasion
 - Calendar view for outfit planning
 - Mobile app (React Native) or PWA
 - Dark/light theme toggle
@@ -402,6 +383,6 @@ app.use('/api/your-resource', yourRoutes);
 
 ## Author
 Razija Merdanić
-Student project – NTIP (Napredne tehnike internet programiranja).
+Student project 2026 – NTIP (Napredne tehnike internet programiranja).
 
 
